@@ -43,11 +43,11 @@ router.post('/add', (req, res, next) => {
 
     // this will allow the user to add a new book to the database and show it onto the book list
     let newBook = book({
-      "title": req.body.title,
-      "description": req.body.description,
-      "price": req.body.price,
-      "author": req.body.author,
-      "genre": req.body.genre
+      "Title": req.body.title,
+      "Description": "",
+      "Price": req.body.price,
+      "Author": req.body.author,
+      "Genre": req.body.genre
     });
 
     book.create(newBook, (err, book) => {
@@ -90,12 +90,12 @@ router.post('/:id', (req, res, next) => {
    let id = req.params.id
 
    let updatedBook = book({
-     "_id": id,
-     "title": req.body.title,
-     "description": req.body.description,
-     "price": req.body.price,
-     "author": req.body.author,
-     "genre": req.body.genre
+     "_id":id,
+     "Title": req.body.title,
+     "Description": "",
+     "Price": req.body.price,
+     "Author": req.body.author,
+     "Genre": req.body.genre
    });
 
    book.updateOne({_id: id}, updatedBook, (err) => {
